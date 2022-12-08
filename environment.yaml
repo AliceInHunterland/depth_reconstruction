@@ -1,0 +1,8 @@
+name: biogehub_3d_depth_reconstructoin
+channels:
+  - defaults
+dependencies:
+  - python=3.9
+  - flask
+  - gdal
+prefix: /opt/miniconda3/envs/biogehub_3d_depth_reconstructoin

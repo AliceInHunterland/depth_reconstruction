@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+function validateForm() {
+  var x = document.forms["myForm"]["Lat1"].value;
+  var y = document.forms["myForm"]["Lat2"].value;
+  var z = document.forms["myForm"]["Lon1"].value;
+  var w = document.forms["myForm"]["Lon2"].value;
+  if (x == "" || x == null || isNaN(x)) {
+    alert("All inputs must be filled out and number");
+    return false;
+  }
+    if (y == "" || y == null || isNaN(y)) {
+    alert("All inputs must be filled out and number");
+    return false;
+  }
+    if (z == "" || z == null || isNaN(z)) {
+    alert("All inputs must be filled out and number");
+    return false;
+  }
+    if (w == "" || w == null || isNaN(w)) {
+    alert("All inputs must be filled out and number");
+    return false;
+  }
+}
+
+    </script>
+</head>
+
+<body>
+
+
+<div class="w3-container w3-center" id="content">
+    <h3>Type anything:</h3>
+    <p>
+    <form action="{{url_for('target')}}" method="GET" name="myForm" onsubmit="return validateForm()">
+        Lat1: <input name="Lat1" placeholder="Latitude of first point" type="text" value="{{ request.form['Lat1'] }}">
+        <br> </br>
+        Lon1: <input name="Lon1" placeholder="Longitude of first point" type="text" value="{{ request.form['Lon1'] }}">
+        <br></br>
+        Lat2: <input name="Lat2" placeholder="Latitude of second point" type="text" value="{{ request.form['Lat2'] }}">
+        <br></br>
+        Lon2: <input name="Lon2" placeholder="Longitude of second point" type="text" value="{{ request.form['Lon2'] }}">
+        <br></br>
+        <button id="submit" type="submit">Submit</button>
+
+    </form>
+
+    </p>
+</div>
+
+</body>
+</html>
