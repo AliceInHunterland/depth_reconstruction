@@ -57,7 +57,14 @@ function validateForm() {
     <p class="text-center" style="left: 110px;">Полученный csv файл возможно отобразить с помощью инструмента для картографирования информации, если его размер не превышает 256 Мб. Для этого необходимо в панеле управления слева нажать на кнопку “Add data”, а затем “Add layer” - выбрав точки в качестве отобрадения и отпределив соответствие Lat = y , Lon = x и z в качестве определяющего цвета.
 
     </p>
+    <br></br>
     <p>
+        <p class="text-center" style="left: 110px;"> Пример заполнения:
+    Lat1: 71.55
+    Lon1: 55.9
+    Lat2: 72.65
+    Lon2: 60
+    </p>
     <form action="{{url_for('target')}}" method="GET" name="myForm" onsubmit="return validateForm()">
         Lat1: <input name="Lat1" placeholder="Latitude of first point" type="text" value="{{ request.form['Lat1'] }}">
         <br> </br>
